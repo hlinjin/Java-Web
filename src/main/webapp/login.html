@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图书管理系统</title>
+  <script language="JavaScript" src="js/jquery-3.6.1.min.js"></script>
+  <script language="JavaScript">
+    //1.当前文档加载完毕，调用jQuery
+    $(function (){
+      //2.执行图片点击事件
+      $("#code").click(function (){
+        //3.设置图片的src属性，注意需要添加随机数
+        $(this).prop("src","code?id="+Math.random());
+      });
+    });
+
+  </script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="drop">
+      <div class="content">
+        <h2>图书管理系统</h2>
+        <form method="post" action="user?type=login" >
+          <div class="inputBox">
+            <input type="text" placeholder="用户名" name="name">
+          </div>
+          <div class="inputBox">
+            <input type="password" placeholder="密码" name="pwd">
+
+          </div>
+          <table>
+            <tr>
+              <td> 验证码:<input type="text" name="valcode" value="" style="width:70px;" required/></td><td><img id="code" src="code"/></td>
+            </tr>
+          </table>
+          <div class="inputBox">
+            <input type="submit" value="登 录">
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <a href="#" class="btns">忘记密码</a>
+    <a href="#" class="btns signup">注册</a>
+  </div>
+</body>
+</html>
